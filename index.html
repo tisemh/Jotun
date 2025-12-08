@@ -1,0 +1,79 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meu Site - GitHub Pages</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- Navbar acessível -->
+  <nav class="navbar" role="navigation" aria-label="Barra de navegação">
+    <div class="container nav-content">
+      <a class="brand" href="#inicio">
+        <img src="./assets/images/logo.svg" alt="Logo" class="brand-logo" />
+        <span class="brand-name">Norse</span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+      <div id="menu" class="menu" role="menu">
+        <a href="#inicio" role="menuitem">Início</a>
+        <a href="#produtos" role="menuitem">Produtos</a>
+        <a href="#contato" role="menuitem">Contato</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="inicio" class="container" tabindex="-1">
+    <h1>Bem-vindo</h1>
+    <p>Este é um exemplo inicial publicado via GitHub Pages, com CSS acessível e responsivo.</p>
+
+    <section id="produtos" class="container">
+      <h2>Produtos</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Card 1</h3>
+          <p>Descrição do primeiro card. Use esta área para destacar recursos.</p>
+          <a class="btn btn-primary" href="#">Saiba mais</a>
+        </article>
+        <article class="card">
+          <h3>Card 2</h3>
+          <p>Descrição do segundo card. Edite conforme sua necessidade.</p>
+          <a class="btn btn-secondary" href="#">Detalhes</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contato" class="container">
+      <h2>Contato</h2>
+      <form class="contact-form" action="#" method="post">
+        <label>
+          Nome<br />
+          <input type="text" name="nome" placeholder="Seu nome" />
+        </label>
+        <br />
+        <label>
+          Email<br />
+          <input type="email" name="email" placeholder="seu@email.com" />
+        </label>
+        <br />
+        <label>
+          Mensagem<br />
+          <textarea name="mensagem" rows="4" placeholder="Como posso ajudar?"></textarea>
+        </label>
+        <br />
+        <button class="btn btn-primary" type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <h4>Rodapé</h4>
+      <p class="copy">© 2025 • Seu Nome ou Empresa</p>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
