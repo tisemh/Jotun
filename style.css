@@ -22,9 +22,9 @@
 
 /* ====== Design tokens ====== */
 :root{
-  --bg:#fff; --bg-alt:#f7f7f7; --text:#111; --muted:#444;
-  --primary:#d32f2f; --primary-dark:#b71c1c; --border:#e0e0e0;
-  --focus:#1a73e8; /* cor de foco visível */
+  --bg:#1a1a1a; --bg-alt:#2d2d2d; --text:#f0f0f0; --muted:#b0b0b0;
+  --primary:#ff6b35; --primary-dark:#ff8c42; --border:#3a3a3a;
+  --focus:#ffa500; /* cor de foco visível */
 }
 
 /* ====== Reset / Base ====== */
@@ -51,7 +51,7 @@ a:focus-visible, .btn:focus-visible, .menu-toggle:focus-visible {
 /* ====== Navbar ====== */
 .navbar{
   position:sticky; top:0; z-index:100;
-  background:#fff; border-bottom:1px solid var(--border);
+  background:#0a0a0a; border-bottom:2px solid var(--primary);
   padding:20px 0;
 }
 .nav-content{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; }
@@ -95,7 +95,7 @@ h1,h2,h3,.footer h4{
   font-family: "Norse Kawl", "Viking", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
 /* Se preferir, remova o hover em headings para reduzir distração */
-h1:hover,h2:hover,h3:hover,.footer h4:hover{
+h2:hover,h3:hover,.footer h4:hover{
   text-decoration:underline; text-decoration-color:var(--primary);
   text-decoration-thickness:3px; text-underline-offset:6px;
 }
@@ -122,6 +122,10 @@ p{ margin:12px 0 18px; }
 /* ====== Footer ====== */
 .footer{ background:var(--bg-alt); padding:20px; margin-top:40px; border-top:1px solid var(--border); }
 .copy{ text-align:center; color:var(--muted); }
+
+/* ====== Horários ====== */
+.horarios-container{ display:flex; justify-content:center; align-items:center; }
+.horarios-img{ max-width:100%; height:auto; border-radius:8px; box-shadow:0 4px 20px rgba(255,107,53,.2); }
 
 /* ====== Tema escuro opcional ====== */
 @media (prefers-color-scheme: dark) {
