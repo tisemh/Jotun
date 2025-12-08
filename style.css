@@ -22,9 +22,9 @@
 
 /* ====== Design tokens ====== */
 :root{
-  --bg:#1a1a1a; --bg-alt:#2d2d2d; --text:#f0f0f0; --muted:#b0b0b0;
+  --bg:#ffffff; --bg-alt:#f7f7f7; --text:#111111; --muted:#666666;
   --primary:#ff6b35; --primary-dark:#ff8c42; --border:#3a3a3a;
-  --focus:#ffa500; /* cor de foco visível */
+  --line:#2b2b2b; --focus:#ffa500; /* cor de foco visível */
 }
 
 /* ====== Reset / Base ====== */
@@ -32,8 +32,8 @@
 html, body{
   margin:0; padding:0;
   background:var(--bg); color:var(--text);
-  font-family: "Viking", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  font-size: 14.4px;
+  font-family: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
 }
 body *{ font-family: inherit; }
 img{ max-width:100%; display:block; }
@@ -51,13 +51,15 @@ a:focus-visible, .btn:focus-visible, .menu-toggle:focus-visible {
 /* ====== Navbar ====== */
 .navbar{
   position:sticky; top:0; z-index:100;
-  background:#0a0a0a; border-bottom:2px solid var(--primary);
+  background:transparent; border-bottom:none; /* linha aplicada ao container interno para alinhar com o texto */
   padding:20px 0;
 }
-.nav-content{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; }
-.brand{ display:flex; align-items:center; gap:15px; text-transform:uppercase; font-family: "Viking", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; font-size:36px; font-weight:700; text-align:center; }
+.nav-content{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; border-bottom: calc(2px * 1.12) solid var(--line); padding-bottom:18px; }
+.brand{ display:flex; align-items:center; gap:15px; text-transform:uppercase; font-size:36px; font-weight:700; text-align:center; }
 .brand-logo{ width:60px; height:60px; border-radius:4px; }
-.brand-name{ font-weight:700; text-decoration:none; line-height:1.2; }
+.brand-name{ font-weight:700; text-decoration:none; line-height:1.2; display:block; }
+.brand-text{ display:flex; flex-direction:column; align-items:flex-start; }
+.brand-subtitle{ font-size:0.9em; font-weight:500; text-transform:none; margin-top:2px; }
 
 .menu{ display:flex; align-items:center; gap:30px; justify-content:center; flex-wrap:wrap; }
 .menu a{ display:inline-block; padding:8px 10px; border-radius:6px; margin:0 2px; font-size:16px; font-weight:500; }
@@ -138,9 +140,10 @@ p{ margin:12px 0 18px; }
 
 /* ====== WhatsApp ====== */
 .whatsapp-container{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; padding:40px 0; }
-.whatsapp-icon{ display:inline-flex; align-items:center; justify-content:center; width:60px; height:60px; background:var(--primary); border-radius:50%; text-decoration:none; transition:all 0.3s ease; box-shadow:0 4px 15px rgba(255,107,53,.3); }
-.whatsapp-icon:hover{ background:var(--primary-dark); transform:scale(1.1); box-shadow:0 6px 20px rgba(255,107,53,.5); }
-.whatsapp-icon svg{ width:40px; height:40px; fill:#fff; }
+.whatsapp-icon{ display:inline-flex; align-items:center; justify-content:center; text-decoration:none; transition:all 0.15s ease; }
+.whatsapp-img{ width:60px; height:60px; display:block; }
+.insta-img{ width:44px; height:44px; display:block; margin-top:8px; }
+.socials{ margin-top:6px; }
 
 /* ====== Tema escuro opcional ====== */
 @media (prefers-color-scheme: dark) {
