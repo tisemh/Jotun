@@ -1,0 +1,1 @@
+function toggleMenu(){var m=document.getElementById('main-menu'); if(m){m.classList.toggle('show');}} var y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
