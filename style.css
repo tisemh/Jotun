@@ -152,6 +152,19 @@ h2:hover::before, h3:hover::before, .footer h4:hover::before{
   display: none !important;
 }
 
+/* Desativar totalmente o hover sobre o título da marca e subtítulo */
+.brand-name, .brand-subtitle {
+  pointer-events: none; /* impede hover/interação nesses spans, mantém link funcionando no pai */
+  cursor: default;
+}
+
+/* Garante que nenhum pseudo-elemento apareça mesmo que outras regras tentem ativá-los */
+.brand-name::before, .brand-name::after,
+.brand-subtitle::before, .brand-subtitle::after {
+  display: none !important;
+  opacity: 0 !important;
+}
+
 /* ====== Parágrafos com fonte Norse Kawl ====== */
 p{
   font-family: inherit; /* Montserrat herdada do body */
