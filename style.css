@@ -138,9 +138,23 @@ p{ margin:12px 0 18px; }
 .horarios-container{ display:flex; justify-content:center; align-items:center; }
 .horarios-img{ max-width:100%; height:auto; border-radius:8px; box-shadow:0 4px 20px rgba(255,107,53,.2); }
 
-/* Espaçamento maior antes da seção 'Nossa grade de horários' */
-#produtos { padding-top: 36px; }
-#produtos h2 { margin-top: 48px; }
+/* Espaçamento antes/depois da seção 'Nossa grade de horários' */
+/* Reduzido em 10% o espaço antes (36px -> 32.4px) e aumento de 10% depois */
+#produtos { padding-top: 32px; }
+#produtos h2 { margin-top: 43px; text-align:center; margin-bottom: calc(12px * 1.10); }
+
+/* Estilo para a tabela de horários que substitui a imagem */
+.horarios-table{
+  width:100%; border-collapse:collapse; border:1px solid var(--border);
+  border-radius:8px; overflow:hidden; font-size:1rem; background:#fff;
+}
+.horarios-table thead th{ background:var(--bg-alt); padding:12px 10px; font-weight:700; text-transform:uppercase; }
+.horarios-table th, .horarios-table td{ padding:14px 10px; text-align:center; border-bottom:1px solid var(--border); }
+.horarios-table tbody tr:last-child td{ border-bottom:none; }
+.horarios-table td{ color:var(--text); }
+
+/* Manter proporção agradável em larguras maiores */
+.horarios-container{ max-width:900px; margin:0 auto; }
 
 /* ====== WhatsApp ====== */
 .whatsapp-container{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; padding:40px 0; }
