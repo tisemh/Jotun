@@ -100,10 +100,56 @@ h2,h3,.footer h4{
   text-transform:uppercase; text-decoration:none;
   font-family: "Viking", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
-/* Se preferir, remova o hover em headings para reduzir distração */
-h2:hover,h3:hover,.footer h4:hover{
-  text-decoration:underline; text-decoration-color:var(--primary);
-  text-decoration-thickness:3px; text-underline-offset:6px;
+/* Hover personalizado para headings (duas linhas) */
+/* Removemos o text-decoration padrão e desenhamos duas linhas com pseudo-elementos. */
+h2,h3,.footer h4{ position: relative; }
+
+/* linha superior (primária) */
+h2::after, h3::after, .footer h4::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0.7);
+  width: 60%;
+  height: 3.45px; /* 15% mais espesso que 3px */
+  background: var(--primary);
+  bottom: -6px;
+  opacity: 0;
+  transition: opacity .18s ease, transform .18s ease;
+  pointer-events: none;
+}
+
+/* linha secundária, 20% menor e centralizada abaixo da primeira */
+h2::before, h3::before, .footer h4::before{
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0.7);
+  width: 40%;
+  height: 2.76px; /* 20% menor que 3.45px */
+  background: var(--primary);
+  bottom: -12px;
+  opacity: 0;
+  transition: opacity .18s ease, transform .18s ease;
+  pointer-events: none;
+}
+
+/* ativar linhas ao passar o mouse */
+h2:hover::after, h3:hover::after, .footer h4:hover::after,
+h2:hover::before, h3:hover::before, .footer h4:hover::before{
+  opacity: 1;
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Evitar o efeito em elementos específicos (título da marca e o h2 de #produtos) */
+.brand-name:hover, .brand-subtitle:hover, #produtos h2:hover {
+  text-decoration: none;
+}
+
+/* garantir que não desenhemos as linhas para estes elementos */
+.brand-name::after, .brand-subtitle::after, #produtos h2::after,
+.brand-name::before, .brand-subtitle::before, #produtos h2::before{
+  display: none !important;
 }
 
 /* ====== Parágrafos com fonte Norse Kawl ====== */
