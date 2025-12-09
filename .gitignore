@@ -1,0 +1,10 @@
+# Node / env
+node_modules/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Images backup
+assets/images/jotun-logo.orig.png
