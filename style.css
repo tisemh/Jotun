@@ -50,16 +50,16 @@ a:focus-visible, .btn:focus-visible, .menu-toggle:focus-visible {
 
 /* ====== Navbar ====== */
 .navbar{
-  position:sticky; top:0; z-index:100;
+  position:static; /* não fixo ao rolar */
   background:transparent; border-bottom:none; /* linha aplicada ao container interno para alinhar com o texto */
   padding:20px 0;
 }
 .nav-content{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; border-bottom: calc(2px * 1.12) solid var(--line); padding-bottom:18px; }
-.brand{ display:flex; align-items:center; gap:15px; text-transform:uppercase; font-size:36px; font-weight:700; text-align:center; }
+.brand{ display:flex; align-items:center; gap:15px; text-transform:uppercase; font-size:41.4px; font-weight:700; text-align:center; }
 .brand-logo{ width:72px; height:72px; border-radius:4px; }
-.brand-name{ font-weight:700; text-decoration:none; line-height:1.2; display:block; }
-.brand-text{ display:flex; flex-direction:column; align-items:flex-start; }
-.brand-subtitle{ font-size:0.85em; font-weight:500; text-transform:none; margin-top:4px; }
+.brand-name{ font-weight:700; text-decoration:none; line-height:1.2; display:block; font-family: "Norse Kawl", serif; font-size:41.4px; }
+.brand-text{ display:flex; flex-direction:column; align-items:center; text-align:center; }
+.brand-subtitle{ font-size:0.85em; font-weight:500; text-transform:none; margin-top:4px; font-family: "Norse Kawl", serif; }
 
 .menu{ display:flex; align-items:center; gap:30px; justify-content:center; flex-wrap:wrap; }
 .menu a{ display:inline-block; padding:8px 10px; border-radius:6px; margin:0 2px; font-size:16px; font-weight:500; }
@@ -108,7 +108,7 @@ h2:hover,h3:hover,.footer h4:hover{
 
 /* ====== Parágrafos com fonte Norse Kawl ====== */
 p{
-  font-family: "Norse Kawl", "Viking", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: inherit; /* Montserrat herdada do body */
 }
 
 /* ====== Spacing & Typography ====== */
@@ -140,11 +140,14 @@ p{ margin:12px 0 18px; }
 
 /* ====== WhatsApp ====== */
 .whatsapp-container{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; padding:40px 0; }
-.whatsapp-icon{ display:inline-flex; align-items:center; justify-content:center; text-decoration:none; transition:all 0.15s ease; border-radius:50%; background:#bff0b0; width:76px; height:76px; box-shadow:0 4px 12px rgba(0,0,0,0.08); }
+.social-row{ display:flex; gap:16px; align-items:center; justify-content:center; }
+.whatsapp-icon{ display:inline-flex; align-items:center; justify-content:center; text-decoration:none; transition:all 0.15s ease; border-radius:50%; background:#a6ff00; width:76px; height:76px; box-shadow:0 4px 12px rgba(0,0,0,0.08); }
 .whatsapp-icon:hover{ transform:scale(1.04); }
 .whatsapp-img{ width:60px; height:60px; display:block; }
-.insta-img{ width:60px; height:60px; display:block; margin-top:8px; }
+.insta-link{ display:inline-flex; align-items:center; justify-content:center; width:76px; height:76px; border-radius:50%; background:transparent; }
+.insta-img{ width:60px; height:60px; display:block; }
 .socials{ margin-top:6px; display:flex; gap:10px; align-items:center; }
+.contact-note{ text-align:center; font-size:16px; }
 
 /* ====== Tema escuro opcional ====== */
 @media (prefers-color-scheme: dark) {
