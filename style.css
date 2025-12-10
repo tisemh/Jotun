@@ -165,6 +165,18 @@ h2:hover::before, h3:hover::before, .footer h4:hover::before{
   opacity: 0 !important;
 }
 
+/* Garantir que nenhum hover seja aplicado ao link da marca nem aos seus filhos */
+.brand, .brand a, .brand a * {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+.brand a:hover, .brand a:hover * {
+  text-decoration: none !important;
+  color: inherit !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
+
 /* ====== Parágrafos com fonte Norse Kawl ====== */
 p{
   font-family: inherit; /* Montserrat herdada do body */
